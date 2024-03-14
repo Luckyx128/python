@@ -1,14 +1,16 @@
+from unittest import result
 from flask import Flask, request, render_template , session
 from req import RequestClass
 from sele import seleniumClass
 from cp import cp
 app = Flask(__name__)
 
-app.secret_key = "dasdasdasdalscnml"
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
         if request.method == 'GET':
-                return render_template('index.html')
+                results = {'nome':'Lucas','email':'lulu'}
+                return render_template('index.html',content=[results],nome="Emily")
         else: return request.form['nome']
 
 @app.route('/cep')

@@ -9,6 +9,18 @@
     <script src="{{ url_for('static',filename = 'script.js')}}"></script>
 </head>
 <body>
+    {% for item in content %}
+  
+    <h1>{{ item}}</h1>
+
+    {% endfor %}
+
+    {% if nome %}
+  
+    <h1>{{ nome }}</h1>
+
+    {% endif %}
+    <h1> Ta vendo isso Gustavo</h1>
     <div id="cep"><img src="static\img\Confirm.gif" alt="" srcset=""></div>
     <div id="cep"><img src="static\img\Medal.gif" alt="" srcset=""></div>
     <div id="cep"><img src="static\img\Lottie Lego.gif" alt="" srcset=""></div>
