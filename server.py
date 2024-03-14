@@ -1,13 +1,15 @@
-import flask
+from flask import Flask, request, render_template , session
 from req import RequestClass
 from sele import seleniumClass
 from cp import cp
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
-@app.route('/')
+app.secret_key = "dasdasdasdalscnml"
+@app.route('/', methods=['GET', 'POST'])
 def index():
-        return flask.render_template('index.html')
-        
+        if request.method == 'GET':
+                return render_template('index.html')
+        else: return request.form['nome']
 
 @app.route('/cep')
 def cep():
@@ -22,4 +24,4 @@ def pg():
         return cp.psyco()
 
 
-app.run(port='5555',debug=True)
+app.run(port='5555',debug=True, host='0.0.0.0')
