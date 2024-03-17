@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login UpDownGeek</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'style.css')}}">
+    <script src="{{ url_for('static',filename = 'script.js')}}"></script>
+</head>
+<body>
+    <main >
+<div id="content-login">
+    <div ><img src="static\img\Lottie Lego.gif" alt="" srcset=""></div>
+    <form action="/autenticar" method="post">
+        <label for="login"> <span>Usuário: </span> <input type="text" name="login" id="login"></label>
+        <label for="password"><span>Senha: </span><input type="password" name="password" id="password"></label>
+        <button type="submit">Confirmar</button>
+    </form>
+</div>
+</main>
+</body>
+</html>
