@@ -7,14 +7,14 @@ from cp import cp
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def index():
         if request.method == 'GET':
                 results = {'nome':'Lucas','email':'lulu'}
                 return render_template('index.html')
         else: return request.form['nome']
 
-@app.route('/login')
+@app.route('/')
 def index2():
         return render_template('login.html')
 
